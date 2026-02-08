@@ -32,4 +32,68 @@
  */
 export function getSeasonActivity(month, temperature) {
   // Your code here
+  switch (month) {
+    case 1:
+      if (temperature < 0) {
+        return { season: "Winter", activity: "skiing" };
+      }
+      return { season: "Winter", activity: "ice skating" };
+    case 2:
+      if (temperature < 0) {
+        return { season: "Winter", activity: "skiing" };
+      }
+      return { season: "Winter", activity: "ice skating" };
+    case 3:
+      if (temperature > 20) {
+        return { season: "Spring", activity: "hiking" };
+      }
+      return { season: "Spring", activity: "museum visit" };
+    case 4:
+      if (temperature > 20) {
+        return { season: "Spring", activity: "hiking" };
+      }
+      return { season: "Spring", activity: "museum visit" };
+    case 5:
+      if (temperature > 20) {
+        return { season: "Spring", activity: "hiking" };
+      }
+      return { season: "Spring", activity: "museum visit" };
+    case 6:
+      if (temperature > 35) {
+        return { season: "Summer", activity: "swimming" };
+      }
+      return { season: "Summer", activity: "cycling" };
+    case 7:
+      if (temperature > 35) {
+        return { season: "Summer", activity: "swimming" };
+      }
+      return { season: "Summer", activity: "cycling" };
+    case 8:
+      if (temperature > 35) {
+        return { season: "Summer", activity: "swimming" };
+      }
+      return { season: "Summer", activity: "cycling" };
+    case 9:
+      if (temperature > 15) {
+        return { season: "Autumn", activity: "nature walk" };
+      }
+      return { season: "Autumn", activity: "reading at a cafe" };
+    case 10:
+      if (temperature > 15) {
+        return { season: "Autumn", activity: "nature walk" };
+      }
+      return { season: "Autumn", activity: "reading at a cafe" };
+    case 11:
+      if (temperature > 15) {
+        return { season: "Autumn", activity: "nature walk" };
+      }
+      return { season: "Autumn", activity: "reading at a cafe" };
+    case 12:
+      if (temperature < 0) {
+        return { season: "Winter", activity: "skiing" };
+      }
+      return { season: "Winter", activity: "ice skating" };
+    default:
+      return null;
+  }
 }

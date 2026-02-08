@@ -27,4 +27,39 @@
  */
 export function checkPasswordStrength(password) {
   // Your code here
+  if (typeof password !== "string" || password.length === 0) {
+    return "weak";
+  }
+
+  let criteria = 0;
+
+  let hasUpper = false;
+  let hasLower = false;
+  let hasDigit = false;
+  let hasSpecial = false;
+
+  for (let i = 0; i < password.length; i++) {
+    let ch = password.charCodeAt(i);
+
+    if (ch >= 65 && ch <= 90) {
+      hasUpper = true;
+    } else if (ch >= 97 && ch <= 122) {
+      hasLower = true;
+    } else if (ch >= 48 && ch <= 57) {
+      hasDigit = true;
+    } else {
+      hasSpecial = true;
+    }
+  }
+
+  if (password.length >= 8) criteria++;
+  if (hasUpper) criteria++;
+  if (hasLower) criteria++;
+  if (hasDigit) criteria++;
+  if (hasSpecial) criteria++;
+
+  if (criteria <= 1) return "weak";
+  if (criteria <= 3) return "medium";
+  if (criteria === 4) return "strong";
+  return "very strong";
 }
